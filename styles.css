@@ -1,0 +1,232 @@
+body {
+    width: 580px;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 10px;
+    background-color: #ffffff;
+    margin-right: 10px;
+    align-items: center;
+}
+
+.container-1 {
+    width: 580px;
+    background-color: #F0F8FF;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; /* Ensures items wrap into rows */
+    gap: 15px; 
+}
+
+.container-2 {
+    width: 580px; /* Ensure same width */
+    background-color: #E6F2FF;
+    padding: 20px; /* Increased for consistency */
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center; /* Fix alignment */
+    justify-content: space-between; /* Balance content */
+}
+
+
+.container-3 {
+    width: 580px;
+    background-color: #FFF5E1;
+    padding: 20px;
+    margin: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap; /* Ensures items wrap into rows */
+    gap: 15px; 
+}
+
+.container-4 {
+    width: 580px;
+    background-color: #E1F7D5;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-5 {
+    width: 580px;
+    background-color: #FFD1DC;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.container-6 {
+    width: 580px;
+    background-color: #DCDCDC;
+    padding: 10px;
+    gap: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.form-group label, .form-group input, .form-group select {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+}
+
+
+#title {
+    flex-grow: 2;
+    align-items: center;
+    min-width: 250px;
+    margin-right: 10px; /* Adjust spacing as needed */
+}
+
+#titleColor {
+    width: 50px;
+    height: 30px;
+    padding: 0;
+    border: none;
+}
+
+h1 {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+#instructionText {
+    flex-grow: 2;
+    min-width: 370px;
+    margin-right: 10px; /* Adjust spacing as needed */
+    margin-top: 20 px;
+}
+
+.instruction-group {
+    display: flex;
+    align-items: left;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.instruction-group-2 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Aligns items to the left */
+    gap: 10px; /* Adds spacing between items */
+    flex-wrap: wrap; /* Ensures proper wrapping */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-right: 10px;
+}
+
+input, textarea {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    width: 100%;
+    height: 50px;
+}
+
+button {
+    padding: 8px 15px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: nowrap; /* Prevents wrapping, ensuring all buttons stay on one line */
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    gap: 10px;
+    margin-top: 20px;
+    width: 100%;
+    overflow-x: auto; /* Adds horizontal scrolling if buttons overflow */
+}
+
+
+#puzzleContainer {
+    width: 580px;
+    min-height: 400px; /* Ensure puzzle container does not collapse */
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: block; /* Change from flexbox to block layout */
+    text-align: center;
+    margin: 10px auto;
+}
+
+
+#puzzleTitle {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+
+
+#gridSize {
+    width: 40px;
+    margin-right: 20px;
+}
+
+
+#puzzleSVG {
+    display: block; /* Removes extra spacing */
+    margin: 0 auto; /* Centers it */
+    max-width: 100%; /* Ensures it does not overflow */
+    height: auto; /* Allows it to scale properly */
+}
