@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="svg2pdf.umd.min.js"></script>
+    <script src="script.js" defer></script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Word Search Generator</title>
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;700&family=Lato:wght@300;400;700&family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@400;700&family=Pacifico&family=Raleway:wght@300;400;700&family=Dancing+Script:wght@400;700&family=Oswald:wght@300;400;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Custom Word Search Generator</h1>
+
+    <div class="container-1">  
+        <div class="form-group">
+            <label for="title">Puzzle Title:</label>
+            <input type="text" id="title" placeholder="Enter puzzle title" value="My Word Search">
+        </div>
+
+        <div class="form-group">
+
+            <label for="titleColor">Title Color:</label>
+            <input type="color" id="titleColor" value="#000000">
+
+            <label for="fontStyle">Font Style:</label>
+            <select id="fontStyle">
+                <!-- Standard Web Fonts -->
+                <option value="Arial">Arial</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Courier New">Courier New</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Trebuchet MS">Trebuchet MS</option>
+                <option value="Comic Sans MS">Comic Sans MS</option>
+            
+                <!-- Google Fonts (Add to CSS) -->
+                <option value="Poppins">Poppins</option>
+                <option value="Roboto">Roboto</option>
+                <option value="Lato">Lato</option>
+                <option value="Montserrat">Montserrat</option>
+                <option value="Playfair Display">Playfair Display</option>
+                <option value="Pacifico">Pacifico</option>
+                <option value="Raleway">Raleway</option>
+                <option value="Dancing Script">Dancing Script</option>
+                <option value="Oswald">Oswald</option>
+                <option value="Merriweather">Merriweather</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="container-2">    
+            <div class="column">
+                <label for="gridSize">Grid Size:</label>
+                <input type="number" id="gridSize" min="5" max="20" value="10">
+            </div>
+            <div class="column">
+                <label for="difficulty">Difficulty:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <div class="column">
+                <label for="theme">Class Theme:</label>
+                <select id="theme">
+                    <option value="default">Default</option>
+                </select>
+            </div> 
+    </div>
+
+    <div class="container-3">
+        <div class="instruction-group">
+            <label for="instructionText">Instruction (Optional):</label>
+            <input type="text" id="instructionText" placeholder="Find all the words in the puzzle!" value="Find all the words listed below in the word search grid above.">
+        </div>
+        
+        <div class="instruction-group-2">
+                <div>
+                    <label for="instructionFont">Font:</label>
+                    <select id="instructionFont">
+                       <!-- Standard Web Fonts -->
+                <option value="Arial">Arial</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Courier New">Courier New</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Trebuchet MS">Trebuchet MS</option>
+                <option value="Comic Sans MS">Comic Sans MS</option>
+            
+                <!-- Google Fonts (Add to CSS) -->
+                <option value="Poppins">Poppins</option>
+                <option value="Roboto">Roboto</option>
+                <option value="Lato">Lato</option>
+                <option value="Montserrat">Montserrat</option>
+                <option value="Playfair Display">Playfair Display</option>
+                <option value="Pacifico">Pacifico</option>
+                <option value="Raleway">Raleway</option>
+                <option value="Dancing Script">Dancing Script</option>
+                <option value="Oswald">Oswald</option>
+                <option value="Merriweather">Merriweather</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="instructionSize">Size:</label>
+                    <input type="number" id="instructionSize" min="10" max="24" value="12">
+                </div>
+            
+                <div>
+                    <label for="instructionColor">Color:</label>
+                    <input type="color" id="instructionColor" value="#000000">
+                </div>             
+                  
+        </div>
+
+    </div>
+
+    <div class="container-4">
+        <div class="form-group">
+            <label for="words">Enter Words (comma-separated):</label>
+        </div>
+        <textarea id="words" placeholder="word1, word2, word3"></textarea>
+
+    </div>
+
+    <div class="button-container">
+        <button id="generatePuzzleButton"><i class="fa-solid fa-gears"></i> Generate Puzzle</button>
+
+        <button id="saveSVGButton"><i class="fa-regular fa-file-image"></i> Save as SVG</button>
+        <button id="downloadButton"><i class="fa-solid fa-file-pdf"></i> Download PDF</button>
+        <button id="generateSolution"><i class="fa-solid fa-magnifying-glass"></i> Show Solution</button>
+
+    </div>
+
+    <div class="container-6"> 
+        <div id="puzzleContainer">
+            <h2 id="puzzleTitle">My Word Search</h2>
+            <svg id="puzzleSVG" width="100%" height="300px" viewBox="0 0 500 500"></svg>
+
+        </div>
+    </div>
+
+    
+</body>
+</html>
